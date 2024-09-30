@@ -53,11 +53,11 @@ It's better to choose a professional-like name, usually `[First][Last]` name
 Create a new empty **private** repository on GitHub. Please name it as the original repository `scala-course-2023-2024-autumn`.
 
 ### Clone the course repository
-The course repository is [here](https://github.com/KarazinScalaUsersGroup/scala-course-2023-2024-autumn).
+The course repository is [here](https://github.com/Mexmath-Foundation/scala-course-autumn).
 You can either use Intellij IDE or do it manually.
 For manually cloning move to the directory you'd like the project to be located and execute
 ````shell
-git clone https://github.com/KarazinScalaUsersGroup/scala-course-2023-2024-autumn.git
+git clone https://github.com/Mexmath-Foundation/scala-course-autumn.git
 ````
 
 Please **do not** fork the repository.
@@ -69,8 +69,8 @@ git remote -v
 ```
 the output should be
 ```shell
-origin	https://github.com/KarazinScalaUsersGroup/scala-course-2023-2024-autumn.git (fetch)
-origin	https://github.com/KarazinScalaUsersGroup/scala-course-2023-2024-autumn.git (push)
+origin	https://github.com/Mexmath-Foundation/scala-course-autumn.git (fetch)
+origin	https://github.com/Mexmath-Foundation/scala-course-autumn.git (push)
 ```
 #### Check the branches
 ```shell
@@ -90,8 +90,8 @@ git remote rename origin course
 ```
 execute `git remote -v`, the output should be
 ```shell
-course	https://github.com/KarazinScalaUsersGroup/scala-course-2023-2024-autumn.git (fetch)
-course	https://github.com/KarazinScalaUsersGroup/scala-course-2023-2024-autumn.git (push)
+course	https://github.com/Mexmath-Foundation/scala-course-autumn.git (fetch)
+course	https://github.com/Mexmath-Foundation/scala-course-autumn.git (push)
 ```
 #### Disable push
 To prevent pushing to the course repository replace push url by any non-existent url, i.e. DISABLED
@@ -100,7 +100,7 @@ git remote set-url --push course DISABLED
 ```
 execute `git remote -v`, the output should be
 ```shell
-course	https://github.com/KarazinScalaUsersGroup/scala-course-2023-2024-autumn.git (fetch)
+course	https://github.com/Mexmath-Foundation/scala-course-autumn.git (fetch)
 course	DISABLED (push)
 ```
 
@@ -119,7 +119,7 @@ Execute each command one-by-one.
 
 Execute `git remote -v`, the output should be
 ```shell
-course	https://github.com/KarazinScalaUsersGroup/scala-course-2023-2024-autumn.git (fetch)
+course	https://github.com/Mexmath-Foundation/scala-course-autumn.git (fetch)
 course	DISABLED (push)
 origin  https://github.com/<your github account>/scala-course-2023-2024-autumn.git (fetch)
 origin  https://github.com/<your github account>/scala-course-2023-2024-autumn.git (push)
@@ -173,10 +173,10 @@ To execute a specific test suite run
 ```shell
 sbt  testOnly <full path to the test suite>
 ```
-for example for `karazin.scala.users.group.week1.TopicSpecification` run
+for example for `mexmath.foundation.week1.topic.ArithmeticSpecification` run
 
 ```shell
-sbt  testOnly karazin.scala.users.group.week1.TopicSpecification
+sbt  testOnly mexmath.foundation.week1.topic.ArithmeticSpecification
 ```
 
 To format the code run

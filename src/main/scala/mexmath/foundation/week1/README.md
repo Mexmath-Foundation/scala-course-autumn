@@ -2,7 +2,17 @@
 
 This week in the topic we are building a simple model for arithmetic over Z<sub>3</sub>.
 
+```
+Nat3       ::= Zero | One | Two
+Expression ::= Nat3 | (Expression + Expression) | (Expression * Expression)
+```
+
 In the homework it is required to build a model for a Boolean algebra.
+
+```
+Boolean    ::= True | False
+Expression ::= Boolean | !Expression | (Expression ∧ Expression) | (Expression ∨ Expression) | (Expression → Expression)
+```
 
 Requirements:
 * all `???` must be implemented;

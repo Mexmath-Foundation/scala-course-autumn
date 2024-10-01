@@ -171,12 +171,12 @@ sbt test
 
 To execute a specific test suite run
 ```shell
-sbt  testOnly <full path to the test suite>
+sbt testOnly <full path to the test suite>
 ```
 for example for `mexmath.foundation.week1.topic.ArithmeticSpecification` run
 
 ```shell
-sbt  testOnly mexmath.foundation.week1.topic.ArithmeticSpecification
+sbt testOnly mexmath.foundation.week1.topic.ArithmeticSpecification
 ```
 
 To format the code run

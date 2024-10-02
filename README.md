@@ -1,4 +1,6 @@
-## Mexmath Foundation & Karazin University 
+## Mexmath Foundation at Karazin University 
+Join us on [LinkedIn](https://www.linkedin.com/company/mexmath-foundation).
+
 # Scala Course Autumn
 
 ## Documentation and Resources

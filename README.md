@@ -52,7 +52,7 @@ It's better to choose a professional-like name, usually `[First][Last]` name
 (my personal GitHub account is https://github.com/IgorWolkov).
 
 ### Create a new repository on GitHub
-Create a new empty **private** repository on GitHub. Please name it as the original repository `scala-course-2023-2024-autumn`.
+Create a new empty **private** repository on GitHub. Please name it as the original repository `scala-course-autumn`.
 
 ### Clone the course repository
 The course repository is [here](https://github.com/Mexmath-Foundation/scala-course-autumn).
@@ -123,8 +123,8 @@ Execute `git remote -v`, the output should be
 ```shell
 course	https://github.com/Mexmath-Foundation/scala-course-autumn.git (fetch)
 course	DISABLED (push)
-origin  https://github.com/<your github account>/scala-course-2023-2024-autumn.git (fetch)
-origin  https://github.com/<your github account>/scala-course-2023-2024-autumn.git (push)
+origin  https://github.com/<your github account>/scala-course-autumn.git (fetch)
+origin  https://github.com/<your github account>/scala-course-autumn.git (push)
 ```
 
 To verify that all works, go to the folder with the source code and run

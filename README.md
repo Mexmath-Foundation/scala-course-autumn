@@ -1,4 +1,4 @@
-## Mexmath Foundation at Karazin University 
+## Mexmath Foundation at Karazin University
 Join us on [LinkedIn](https://www.linkedin.com/company/mexmath-foundation).
 
 # Scala Course Autumn
@@ -19,11 +19,11 @@ Join us on [LinkedIn](https://www.linkedin.com/company/mexmath-foundation).
 * [Scala Ukraine](https://t.me/scala_ukraine)
 
 ## Course format
-Each homework relates to each week in the code, i.e. `week1`, `week2` and so one. 
-For each week there are to main parts: `topic` and `homework` for both `main` and `test`. 
-In the `topic` the relevant material is explained and template tests are provided. 
+Each homework relates to each week in the code, i.e. `week1`, `week2` and so one.
+For each week there are to main parts: `topic` and `homework` for both `main` and `test`.
+In the `topic` the relevant material is explained and template tests are provided.
 The `homework` contains similar to the `topic` code or approach that should be implemented or improved.
-Test are required and integral part of the contract unless otherwise stated. 
+Test are required and integral part of the contract unless otherwise stated.
 
 ### The requirements to pass the homework to a review
 Violation of any of the rules results leads to a homework not being checked.
@@ -31,6 +31,12 @@ Violation of any of the rules results leads to a homework not being checked.
 * The tests must be implemented unless otherwise stated.
 * The tests must pass.
 * The code must follow the code format rules.
+
+**Important**
+
+At least `Code Verification / build (pull_request)` github ci check must be green in Checks sections for the PR.
+
+
 
 The student may send an incomplete homework to verify any assumptions but the incompleteness of the homework must be explicitly stated.
 
@@ -150,7 +156,6 @@ Naming convention for homework branches:
 
 ### How to run the project, test etc
 
-
 ```shell
 sbt clean
 ```
@@ -186,5 +191,5 @@ To format the code run
 sbt scalafmt
 ```
 
-All the command can be run in 
+All the command can be run in
 `'sbt shell'` without `'sbt'` prefix.

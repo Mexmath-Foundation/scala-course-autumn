@@ -7,8 +7,9 @@ object naturals:
     def predecessor: Nat
     def successor: Nat = ???
 
+    infix def <(that: Nat): Boolean
+    infix def >(that: Nat): Boolean
     infix def +(that: Nat): Nat
-
     infix def -(that: Nat): Nat
 
     // Optional task
@@ -26,6 +27,10 @@ object naturals:
 
     def predecessor: Nat = throw new Exception("0 doesn't have a predecessor")
 
+    infix def <(that: Nat): Boolean = ???
+
+    infix def >(that: Nat): Boolean = ???
+
     infix def +(that: Nat): Nat = ???
 
     infix def -(that: Nat): Nat = ???
@@ -41,6 +46,10 @@ object naturals:
     def isZero: Boolean = false
 
     def predecessor: Nat = ???
+
+    infix def <(that: Nat): Boolean = ???
+
+    infix def >(that: Nat): Boolean = ???
 
     infix def +(that: Nat): Nat = ???
 

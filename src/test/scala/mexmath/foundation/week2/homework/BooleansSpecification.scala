@@ -12,6 +12,9 @@ object BooleansSpecification extends Properties("Booleans"):
   include(DisjunctionSpecification)
   include(ImplicationSpecification)
   include(AxiomsSpecification)
+  include(BooleanSubstitutionSpecification)
+  include(VariableSubstitutionSpecification)
+  include(ExpressionSubstitutionSpecification)
 
 end BooleansSpecification
 

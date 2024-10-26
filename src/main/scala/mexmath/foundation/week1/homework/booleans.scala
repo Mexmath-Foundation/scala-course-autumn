@@ -19,7 +19,7 @@ object booleans:
   case class Negation(expression: Expression) extends Expression:
 
     def evaluate: Boolean = ???
-    
+
     override def toString: String = ???
 
   // Provide implementation for `Conjunction` type
@@ -30,7 +30,7 @@ object booleans:
 
   // Provide implementation for `Implication` type
   type Implication
-  
+
   extension (expr: Expression)
 
     @targetName("Negation")

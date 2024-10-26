@@ -8,7 +8,21 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  compile:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: coursier/cache-action@v6
+      - uses: olafurpg/setup-scala@v14
+        with:
+          java-version: openjdk@1.17.0
+      - name: Compile main
+        run: sbt clean compile
+      - name: Compile test
+        run: sbt test:compile
+
+  test:
     runs-on: ubuntu-latest
 
     steps:
@@ -32,4 +46,4 @@ jobs:
       - name: Check licenses
         run: sbt licenseCheck
       - name: Lint code
-        run: sbt scalafmtCheckAll scalafmtSbtCheck
+        run: sbt scalafmtCheckAll

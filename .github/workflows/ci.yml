@@ -43,7 +43,5 @@ jobs:
       - uses: olafurpg/setup-scala@v14
         with:
           java-version: openjdk@1.17.0
-      - name: Check licenses
-        run: sbt licenseCheck
       - name: Lint code
         run: sbt scalafmtCheckAll

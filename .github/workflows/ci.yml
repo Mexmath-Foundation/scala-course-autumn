@@ -22,7 +22,7 @@ jobs:
 
   lint:
     runs-on:
-      labels: ubuntu-latest-8-cores
+      labels: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: coursier/cache-action@v6

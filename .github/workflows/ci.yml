@@ -8,6 +8,19 @@ permissions:
   contents: read
 
 jobs:
+  branch-naming:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checking branch naming convension
+        run: |
+          if [[ github.head_ref =~ ^week[0-9]+$ ]]; then
+            echo "Naming convention check for $GITHUB_HEAD_REF branch is passed successfully"
+          else
+            echo "Naming convention is failed for $GITHUB_HEAD_REF branch."
+            exit 1
+          fi
+
   compile:
     runs-on: ubuntu-latest
 
@@ -32,7 +45,7 @@ jobs:
         with:
           java-version: openjdk@1.17.0
       - name: Run tests
-        run: sbt test
+        run: sbt testOnly mexmath.foundation.$GITHUB_HEAD_REF.*
 
   lint:
     runs-on:

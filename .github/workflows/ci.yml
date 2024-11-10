@@ -45,7 +45,7 @@ jobs:
         with:
           java-version: openjdk@1.17.0
       - name: Run tests
-        run: sbt testOnly mexmath.foundation.$GITHUB_HEAD_REF.*
+        run: sbt testOnly mexmath.foundation.${${{github.head_ref}}//-/}.*
 
   lint:
     runs-on:

@@ -50,10 +50,11 @@ jobs:
         run: |
           local input="Hello"
           sbt testOnly mexmath.foundation.42.*
+
 # "${${{github.head_ref}}//-/}"
   lint:
     runs-on: ubuntu-latest
-    needs: compile
+#    needs: compile
 
     steps:
       - uses: actions/checkout@v4

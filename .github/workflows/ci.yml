@@ -47,7 +47,7 @@ jobs:
         with:
           java-version: openjdk@1.17.0
       - name: Run tests
-        run: |
+        run:
 #          sbt testOnly mexmath.foundation.42.*
           echo ${{github.head_ref}}
 

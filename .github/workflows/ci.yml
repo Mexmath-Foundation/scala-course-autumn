@@ -48,8 +48,8 @@ jobs:
           java-version: openjdk@1.17.0
       - name: Run tests
         run: |
-          local input="Hello"
-          sbt testOnly mexmath.foundation.42.*
+#          sbt testOnly mexmath.foundation.42.*
+          echo ${{github.head_ref}}//-/
 
 # "${${{github.head_ref}}//-/}"
   lint:

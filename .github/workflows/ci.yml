@@ -49,7 +49,7 @@ jobs:
       - name: Run tests
         run:
 #          sbt testOnly mexmath.foundation.42.*
-          echo ${{github.head_ref}}//-/
+          echo "${${{github.head_ref}}//-/}"
 
 # "${${{github.head_ref}}//-/}"
   lint:

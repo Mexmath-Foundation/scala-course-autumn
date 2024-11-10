@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: Checking branch naming convension
         run: |
-          if [[ github.head_ref =~ ^week-[0-9]+$ ]]; then
+          if [[ ${{ github.head_ref }} =~ ^week-[0-9]+$ ]]; then
             echo "Naming convention check for $GITHUB_HEAD_REF branch is passed successfully"
           else
             echo "Naming convention is failed for $GITHUB_HEAD_REF branch."

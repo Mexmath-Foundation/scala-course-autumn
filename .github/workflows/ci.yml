@@ -47,7 +47,10 @@ jobs:
         with:
           java-version: openjdk@1.17.0
       - name: Run tests
-        run: sbt testOnly mexmath.foundation.${{github.head_ref//-/}}.*
+        run: |
+          local branch_name = ${{github.head_ref}}
+          local package_name = "${branch_name//-/}"
+          sbt testOnly mexmath.foundation.${package_name}.*
 
   lint:
     runs-on: ubuntu-latest

@@ -48,7 +48,7 @@ jobs:
           java-version: openjdk@1.17.0
       - name: Run tests
         run:
-          sbt testOnly mexmath.foundation.$(echo "${{github.head_ref}}" | sed 's/-//g').*
+          sbt testOnly mexmath.foundation.$(echo "${{github.head_ref}}" | sed 's/-//g').homework.*
 
 # "${${{github.head_ref}}//-/}"
   lint:

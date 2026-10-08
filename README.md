@@ -1,6 +1,6 @@
 ## Functional Programming Course at karazin
 
-# Scala Course Spring
+# Scala Course Autumn
 
 ## Documentation and Resources
 * [Scala 3 Reference](https://docs.scala-lang.org/scala3/reference/)

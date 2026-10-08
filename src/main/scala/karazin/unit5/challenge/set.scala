@@ -15,9 +15,9 @@ object set:
 
     infix def include(x: Numeral): NumeralSet
 
-    // Optional
-    // Uncomment if needed
-//    infix def remove(x: Numeral): NumeralSet
+    // Optional challenge.
+    // Uncomment if needed.
+    //    infix def remove(x: Numeral): NumeralSet
 
     @targetName("union")
     infix def ∪(that: NumeralSet): NumeralSet
@@ -25,15 +25,15 @@ object set:
     @targetName("intersection")
     infix def ∩(that: NumeralSet): NumeralSet
 
-  // Optional
-  // Uncomment if needed
-//    @targetName("difference")
-//    infix def \(that: NumeralSet): NumeralSet
+    // Optional challenge.
+    // Uncomment if needed.
+    //    @targetName("difference")
+    //    infix def \(that: NumeralSet): NumeralSet
 
-  // Optional
-  // Uncomment if needed
-//    @targetName("symmetric difference")
-//    infix def ∆(that: NumeralSet): NumeralSet = ???
+    // Optional challenge.
+    // Uncomment if needed.
+    //    @targetName("symmetric difference")
+    //    infix def ∆(that: NumeralSet): NumeralSet = ???
 
   end NumeralSet
 
@@ -49,9 +49,9 @@ object set:
 
     infix def include(x: Numeral): NumeralSet = ???
 
-    // Optional
-    // Uncomment if needed
-//    infix def remove(x: Numeral): NumeralSet = ???
+    // Optional challenge.
+    // Uncomment if needed.
+    //    infix def remove(x: Numeral): NumeralSet = ???
 
     @targetName("union")
     infix def ∪(that: NumeralSet): NumeralSet = ???
@@ -59,10 +59,10 @@ object set:
     @targetName("intersection")
     infix def ∩(that: NumeralSet): NumeralSet = ???
 
-    // Optional
-    // Uncomment if needed
-//    @targetName("difference")
-//    infix def \(that: NumeralSet): NumeralSet = ???
+    // Optional challenge.
+    // Uncomment if needed.
+    //    @targetName("difference")
+    //    infix def \(that: NumeralSet): NumeralSet = ???
 
     override def toString: String = "[*]"
 
@@ -80,9 +80,9 @@ object set:
 
     infix def include(x: Numeral): NumeralSet = ???
 
-    // Optional
-    // Uncomment if needed
-//    infix def remove(x: Numeral): NumeralSet = ???
+    // Optional challenge.
+    // Uncomment if needed.
+    //    infix def remove(x: Numeral): NumeralSet = ???
 
     @targetName("union")
     infix def ∪(that: NumeralSet): NumeralSet = ???
@@ -90,10 +90,10 @@ object set:
     @targetName("intersection")
     infix def ∩(that: NumeralSet): NumeralSet = ???
 
-    // Optional
-    // Uncomment if needed
-//    @targetName("difference")
-//    infix def \(that: NumeralSet): NumeralSet = ???
+    // Optional challenge.
+    // Uncomment if needed.
+    //    @targetName("difference")
+    //    infix def \(that: NumeralSet): NumeralSet = ???
 
     override def toString: String = s"[$left - [$element] - $right]"
 

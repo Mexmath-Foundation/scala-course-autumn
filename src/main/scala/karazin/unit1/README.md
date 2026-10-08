@@ -2,13 +2,12 @@
 
 You are challenged to implement `addition`, `multiplication` and `power` functions:
 * replace `???` with your implementation;
-* functions must be tail-recursive;
-* functions must cover either **non-negative** numbers (regular tasks);
-  or **any (negative including)** numbers (optional tasks) for  `addition` and `multiplication` only; keep `p` in `power` **non-negative**.
-* it is allowed to use only `increment`, `decrement`, `isZero`, `isNonNegative`, `abs`, `addition`
-and `multiplication` functions. It is not allowed to use regular `+`, `*` or `pow`.
+* functions must cover **non-negative** numbers for  `addition` and `multiplication` only; keep `p` in `power` **non-negative**.
+* it is allowed to use only `S`, `Z`, `addition`
+  and `multiplication` functions. It is not allowed to use regular `+`, `*` or `pow`.
+* make functions tail-recursive (optional);
 * it is not allowed to use Scala 2 syntax if Scala 3 syntax is applicable
-(i.e. curly braces `{...}` instead of semicolon `:` and tabulations);
+  (i.e. curly braces `{...}` instead of semicolon `:` and tabulations);
 * all tests should pass;
 * github build must be green.
 
@@ -22,14 +21,14 @@ In this unit `object`s are used for namespace and code structure.
 
 ```scala 3
 object functions:
-  ...
+...
 ```
 
 For improved code readability, the optional `end` marker is used to highlight the end of the object.
 
 ````scala 3
 object recursive:
-  ...
+...
 end recursive
 ````
 

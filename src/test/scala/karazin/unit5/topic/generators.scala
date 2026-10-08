@@ -1,8 +1,0 @@
-package karazin.unit5.topic
-
-import org.scalacheck.*
-
-object generators:
-  lazy val genSmallPositiveNumber: Gen[BigInt] = Gen.chooseNum(1, 5)
-
-  given Arbitrary[BigInt] = Arbitrary(genSmallPositiveNumber)

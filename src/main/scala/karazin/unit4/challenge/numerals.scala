@@ -27,11 +27,9 @@ object numerals:
     @targetName("addition")
     infix def +(that: Numeral): Numeral
 
-    // Optional
+    // Optional challenge.
     @targetName("subtraction")
     infix def -(that: Numeral): Numeral
-
-    def toInt: Int
 
     override def toString: String = s"Nat($predecessor)"
 
@@ -49,11 +47,9 @@ object numerals:
     @targetName("addition")
     infix def +(that: Numeral): Numeral = ???
 
-    // Optional
+    // Optional challenge.
     @targetName("subtraction")
     infix def -(that: Numeral): Numeral = ???
-
-    def toInt: Int = ???
 
     override def toString: String = ???
 
@@ -74,11 +70,9 @@ object numerals:
     @targetName("addition")
     infix def +(that: Numeral): Numeral = ???
 
-    // Optional
+    // Optional challenge.
     @targetName("subtraction")
     infix def -(that: Numeral): Numeral = ???
-
-    def toInt: Int = 1 + n.toInt
 
     override def toString: String = ???
 

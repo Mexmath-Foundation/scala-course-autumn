@@ -6,37 +6,20 @@ object arithmetic:
 
   type Number = Long
 
-  val increment: Number => Number =
-    value => value + 1
+  val Z: Number => Number = ???
+  val S: Number => Number = ???
 
-  val decrement: Number => Number =
-    value => value - 1
+  /**
+   * Optional task: make `addition` tail-recursive.
+   */
+  val addition: (Number, Number) => Number = ???
 
-  val isZero: Number => Boolean =
-    value => value == 0
+  /**
+   * Optional task: make `multiplication` tail-recursive.
+   */
+  val multiplication: (Number, Number) => Number = ???
 
-  val isNonNegative: Number => Boolean =
-    value => value >= 0
-
-  val abs: Number => Number =
-    value =>
-      if isNonNegative(value) then value
-      else -value
-
-  def addition(left: Number, right: Number): Number =
-    require(left >= 0, "Left must be non-negative")
-    require(right >= 0, "Right must be non-negative")
-
-    ???
-
-  def multiplication(left: Number, right: Number): Number =
-    require(left >= 0, "Left must be non-negative")
-    require(right >= 0, "Right must be non-negative")
-
-    ???
-
-  def power(base: Number, p: Number): Number =
-    require(p >= 0, "Power must be non-negative")
-    require(base != 0 || p != 0, "0^0 is undefined")
-
-    ???
+  /**
+   * Optional task: make `power` tail-recursive.
+   */
+  val power: (Number, Number) => Number = ???

@@ -17,10 +17,8 @@ jobs:
     steps:
       - name: Checking branch naming convention
         run: |
-          if [[ ${{ github.head_ref }} =~ ^unit-[0-9]+$ ]]; then
-            echo "Naming convention check for $GITHUB_HEAD_REF branch is passed successfully"
-          else
-            echo "Naming convention is failed for $GITHUB_HEAD_REF branch."
+          if [[ ! ${{ github.head_ref }} =~ ^unit-[0-9]+$ ]]; then
+            echo "❌ Naming convention is failed for $GITHUB_HEAD_REF branch."
             exit 1
           fi
 
@@ -30,24 +28,73 @@ jobs:
     needs: branch-naming
 
     steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
       - name: Get changed files
         id: changed-files
-        uses: tj-actions/changed-files@v45
+        shell: bash
+        run: |
+          set -euo pipefail
 
-      - name: List all changed files
+          BASE_SHA="${{ github.event.pull_request.base.sha }}"
+          HEAD_SHA="${{ github.event.pull_request.head.sha }}"
+
+          # Ensure the base commit exists locally (usually does with fetch-depth: 0, but this is safe)
+          git fetch --no-tags --prune --depth=1 origin "${BASE_SHA}"
+
+          changed="$(git diff --name-only "${BASE_SHA}" "${HEAD_SHA}")"
+
+          {
+            echo "all_changed_files<<EOF"
+            echo "${changed}"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Ensure changed files belong to this challenge
         env:
           ALL_CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
+        shell: bash
         run: |
-          branch_name=${{ github.head_ref }}
+          set -euo pipefail
+
+          branch_name='${{ github.head_ref }}'
           package_name="${branch_name//-/}"
-          
-          for file in ${ALL_CHANGED_FILES}; do
-            if [[ "$file" != *"${package_name}"* ]]; then
-              echo "$file doesn't belong to $branch_name code changes"
+          allowed_path="${package_name}/challenge/"
+
+          # Iterate line-by-line (handles multiline output safely)
+          while IFS= read -r file; do
+            [[ -z "$file" ]] && continue
+
+            if [[ "$file" != *"${allowed_path}"* ]]; then
+              echo "❌ $file is outside of $allowed_path folder for $branch_name challenge"
               exit 1
             fi
-          done
-          echo "List of all changed files for $branch_name are passed successfully"
+          done <<< "$ALL_CHANGED_FILES"
+
+      - name: Ensure tests exist for this challenge
+        shell: bash
+        run: |
+          set -euo pipefail
+          
+          branch_name='${{ github.head_ref }}'
+          package_name="${branch_name//-/}"
+          allowed_path="${package_name}/challenge"
+          
+          test_root="src/test"
+          
+          if [[ ! -d "$test_root" ]]; then
+            echo "❌ Tests are requred for $branch_name challenge"
+            exit 1
+          fi
+          
+          # Look for any files under src/test/**/$allowed_path/**
+          test_files_count="$(find "$test_root" -type f -path "*/${allowed_path}/*" | wc -l | tr -d ' ')"
+          
+          if [[ "$test_files_count" -eq 0 ]]; then
+            echo "❌ Tests are requred for $branch_name challenge"
+          fi
 
   compile:
     runs-on: ubuntu-latest

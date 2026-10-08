@@ -10,13 +10,14 @@ import org.scalacheck.Properties
 object GenSpecification extends Properties("Gen"):
 
   (0 to 10) foreach { size =>
-    property(s"List of numerals of size $size should satisfy the condition of order") = forAll(genSortedListOfNumerals(size)): (list: List[Numeral]) =>
-      verifyListOrderConditions(list)
+    property(s"List of numerals of size $size should satisfy the condition of order") =
+      forAll(genSortedListOfNumerals(size)): (list: List[Numeral]) =>
+        verifyListOrderConditions(list)
   }
 
   (0 to 4) foreach { depth =>
-    property(s"Set of numeral of depth $depth should satisfy the condition of order") = forAll(genNumeralSet(depth)): (set: NumeralSet) =>
-      verifySetOrderConditions(set)
+    property(s"Set of numeral of depth $depth should satisfy the condition of order") = forAll(genNumeralSet(depth)):
+      (set: NumeralSet) => verifySetOrderConditions(set)
   }
 
   def verifyListOrderConditions(list: List[Numeral]): Boolean =
@@ -28,18 +29,22 @@ object GenSpecification extends Properties("Gen"):
     }
 
   def verifySetOrderConditions(set: NumeralSet): Boolean =
-    def verifySetOrderConditionsReq(set: NumeralSet, rootElement: Numeral, condition: (Numeral, Numeral) => Boolean): Boolean =
+    def verifySetOrderConditionsReq(
+                                     set: NumeralSet,
+                                     rootElement: Numeral,
+                                     condition: (Numeral, Numeral) => Boolean,
+                                   ): Boolean =
       set match
         case Empty => true
         case NonEmpty(left, element, right) =>
           condition(rootElement, element)
-          && verifySetOrderConditionsReq(left, element, (root, elem) => root > elem)
-          && verifySetOrderConditionsReq(right, element, (root, elem) => root < elem)
+            && verifySetOrderConditionsReq(left, element, (root, elem) => root > elem)
+            && verifySetOrderConditionsReq(right, element, (root, elem) => root < elem)
 
     set match
       case Empty => true
       case NonEmpty(left, element, right) =>
         verifySetOrderConditionsReq(left, element, (root, elem) => root > elem)
-        && verifySetOrderConditionsReq(right, element, (root, elem) => root < elem)
+          && verifySetOrderConditionsReq(right, element, (root, elem) => root < elem)
 
 end GenSpecification

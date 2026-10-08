@@ -12,7 +12,7 @@ object generators:
 
   val genVariable: Gen[Variable] =
     for name <- genVariableName
-    yield Variable(name)
+      yield Variable(name)
 
   val genNegation: Gen[Negation] = ???
 

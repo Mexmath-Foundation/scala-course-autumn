@@ -3,7 +3,6 @@ package karazin.unit1.topic
 import scala.annotation.tailrec
 
 object functions:
-  // This is a type alias
   type Number = BigInt
 
   object recursive:

@@ -30,21 +30,21 @@ object GenSpecification extends Properties("Gen"):
 
   def verifySetOrderConditions(set: NumeralSet): Boolean =
     def verifySetOrderConditionsReq(
-                                     set: NumeralSet,
-                                     rootElement: Numeral,
-                                     condition: (Numeral, Numeral) => Boolean,
-                                   ): Boolean =
+      set: NumeralSet,
+      rootElement: Numeral,
+      condition: (Numeral, Numeral) => Boolean,
+    ): Boolean =
       set match
         case Empty => true
         case NonEmpty(left, element, right) =>
           condition(rootElement, element)
-            && verifySetOrderConditionsReq(left, element, (root, elem) => root > elem)
-            && verifySetOrderConditionsReq(right, element, (root, elem) => root < elem)
+          && verifySetOrderConditionsReq(left, element, (root, elem) => root > elem)
+          && verifySetOrderConditionsReq(right, element, (root, elem) => root < elem)
 
     set match
       case Empty => true
       case NonEmpty(left, element, right) =>
         verifySetOrderConditionsReq(left, element, (root, elem) => root > elem)
-          && verifySetOrderConditionsReq(right, element, (root, elem) => root < elem)
+        && verifySetOrderConditionsReq(right, element, (root, elem) => root < elem)
 
 end GenSpecification
